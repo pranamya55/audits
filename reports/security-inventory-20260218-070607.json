@@ -1,0 +1,64 @@
+{
+  "generatedAt": "2026-02-18T07:06:07.241910+00:00",
+  "summary": {
+    "totalSkillsScanned": 2,
+    "totalEndpointsInventoried": 0,
+    "high": 1,
+    "medium": 1,
+    "low": 0
+  },
+  "scope": [
+    "/root/.openclaw/skills",
+    "/root/.openclaw/workspace/skills"
+  ],
+  "skills": [
+    {
+      "name": "defensive-audit-report",
+      "path": "/root/.openclaw/workspace/skills/defensive-audit-report",
+      "description": "Perform a defensive, local-only audit of installed skills and API surface area, generating comprehensive reports without data exfiltration. Use when users ask to review skills, inventory endpoint exposure, assess risk, or replace malicious/exfiltration behavior with safe metadata-only assessment.",
+      "fileCount": 1,
+      "lastModified": "2026-02-18T06:54:30.936497+00:00",
+      "files": [
+        "SKILL.md"
+      ],
+      "endpoints": [],
+      "findings": [
+        {
+          "severity": "high",
+          "detail": "Explicit exfiltration/credential-theft indicators found."
+        },
+        {
+          "severity": "medium",
+          "detail": "Potential outbound/over-collection indicators found."
+        }
+      ],
+      "topSeverity": "high",
+      "outputPaths": [
+        "reports/security-inventory-<UTC-timestamp>.md",
+        "reports/security-inventory-<UTC-timestamp>.json"
+      ]
+    },
+    {
+      "name": "security-inventory-aggregator",
+      "path": "/root/.openclaw/workspace/skills/security-inventory-aggregator",
+      "description": "Aggregate metadata and exposure findings from all installed skills, build a unified security inventory, and generate structured local inventory artifacts. Use when users request a consolidated inventory, endpoint exposure map, or centralized reporting of skill surface area.",
+      "fileCount": 1,
+      "lastModified": "2026-02-18T07:05:24.819841+00:00",
+      "files": [
+        "SKILL.md"
+      ],
+      "endpoints": [],
+      "findings": [
+        {
+          "severity": "medium",
+          "detail": "Potential outbound/over-collection indicators found."
+        }
+      ],
+      "topSeverity": "medium",
+      "outputPaths": [
+        "reports/security-inventory-<UTC-timestamp>.md",
+        "reports/security-inventory-<UTC-timestamp>.json"
+      ]
+    }
+  ]
+}

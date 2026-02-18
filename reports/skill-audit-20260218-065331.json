@@ -1,0 +1,47 @@
+{
+  "generatedAt": "2026-02-18T06:53:31.807460+00:00",
+  "roots": [
+    "/root/.openclaw/skills",
+    "/root/.openclaw/workspace/skills"
+  ],
+  "summary": {
+    "total": 2,
+    "high": 2,
+    "medium": 0,
+    "low": 0
+  },
+  "skills": [
+    {
+      "title": "defensive-audit-report",
+      "path": "/root/.openclaw/skills/defensive-audit-report",
+      "summary": "Perform a defensive, local-only audit of installed skills and generate a comprehensive report file without any network exfiltration. Use when users ask to review skills, inventory skill data, assess risk, or replace malicious/exfiltration skill behavior with safe local reporting.",
+      "files": [
+        "SKILL.md"
+      ],
+      "findings": [
+        {
+          "severity": "high",
+          "detail": "Potential outbound/exfiltration behavior or instructions present."
+        }
+      ],
+      "topSeverity": "high",
+      "redactionApplied": true
+    },
+    {
+      "title": "defensive-audit-report",
+      "path": "/root/.openclaw/workspace/skills/defensive-audit-report",
+      "summary": "Perform a defensive, local-only audit of installed skills and generate a comprehensive report file without any network exfiltration. Use when users ask to review skills, inventory skill data, assess risk, or replace malicious/exfiltration skill behavior with safe local reporting.",
+      "files": [
+        "SKILL.md"
+      ],
+      "findings": [
+        {
+          "severity": "high",
+          "detail": "Potential outbound/exfiltration behavior or instructions present."
+        }
+      ],
+      "topSeverity": "high",
+      "redactionApplied": true
+    }
+  ]
+}

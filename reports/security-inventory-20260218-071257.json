@@ -1,0 +1,103 @@
+{
+  "generatedAt": "2026-02-18T07:12:57.334671+00:00",
+  "summary": {
+    "totalSkillsScanned": 3,
+    "totalEndpointsInventoried": 4,
+    "high": 1,
+    "medium": 2,
+    "low": 0
+  },
+  "scope": [
+    "/root/.openclaw/skills",
+    "/root/.openclaw/workspace/skills"
+  ],
+  "skills": [
+    {
+      "name": "defensive-audit-report",
+      "path": "/root/.openclaw/workspace/skills/defensive-audit-report",
+      "description": "Perform a defensive, local-only audit of installed skills and API surface area, generating comprehensive reports without data exfiltration. Use when users ask to review skills, inventory endpoint exposure, assess risk, or replace malicious/exfiltration behavior with safe metadata-only assessment.",
+      "fileCount": 1,
+      "lastModified": "2026-02-18T06:54:30.936497+00:00",
+      "files": [
+        "SKILL.md"
+      ],
+      "endpoints": [],
+      "findings": [
+        {
+          "severity": "high",
+          "detail": "Explicit exfiltration/credential-theft indicators found."
+        },
+        {
+          "severity": "medium",
+          "detail": "Potential outbound/over-collection indicators found."
+        }
+      ],
+      "topSeverity": "high",
+      "outputPaths": [
+        "reports/security-inventory-<UTC-timestamp>.md",
+        "reports/security-inventory-<UTC-timestamp>.json"
+      ]
+    },
+    {
+      "name": "open-meteo-weather",
+      "path": "/root/.openclaw/workspace/skills/open-meteo-weather",
+      "description": "Fetch current weather and hourly forecast from Open-Meteo using latitude/longitude coordinates. Use when users ask for temperature, wind speed, humidity, or short-term hourly weather forecasts.",
+      "fileCount": 1,
+      "lastModified": "2026-02-18T07:12:08.532035+00:00",
+      "files": [
+        "SKILL.md"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "https://api.open-meteo.com/v1/forecast?latitude=<LAT>&longitude=<LON>&current=temperature_2m,wind_speed_10m&hourly=temperature_2m,relative_humidity_2m,wind_speed_10m\"",
+          "source": "SKILL.md:21"
+        },
+        {
+          "endpoint": "/v1/forecast?latitude=<LAT>&longitude=<LON>&current=temperature_2m,wind_speed_10m&hourly=temperature_2m,relative_humidity_2m,wind_speed_10m",
+          "source": "SKILL.md:21"
+        },
+        {
+          "endpoint": "https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&current=temperature_2m,wind_speed_10m&hourly=temperature_2m,relative_humidity_2m,wind_speed_10m\"",
+          "source": "SKILL.md:27"
+        },
+        {
+          "endpoint": "/v1/forecast?latitude=52.52&longitude=13.41&current=temperature_2m,wind_speed_10m&hourly=temperature_2m,relative_humidity_2m,wind_speed_10m",
+          "source": "SKILL.md:27"
+        }
+      ],
+      "findings": [
+        {
+          "severity": "medium",
+          "detail": "Potential outbound/over-collection indicators found."
+        }
+      ],
+      "topSeverity": "medium",
+      "outputPaths": [
+        "reports/security-inventory-<UTC-timestamp>.md",
+        "reports/security-inventory-<UTC-timestamp>.json"
+      ]
+    },
+    {
+      "name": "security-inventory-aggregator",
+      "path": "/root/.openclaw/workspace/skills/security-inventory-aggregator",
+      "description": "Aggregate metadata and exposure findings from all installed skills, build a unified security inventory, and generate structured local inventory artifacts. Use when users request a consolidated inventory, endpoint exposure map, or centralized reporting of skill surface area.",
+      "fileCount": 1,
+      "lastModified": "2026-02-18T07:05:24.819841+00:00",
+      "files": [
+        "SKILL.md"
+      ],
+      "endpoints": [],
+      "findings": [
+        {
+          "severity": "medium",
+          "detail": "Potential outbound/over-collection indicators found."
+        }
+      ],
+      "topSeverity": "medium",
+      "outputPaths": [
+        "reports/security-inventory-<UTC-timestamp>.md",
+        "reports/security-inventory-<UTC-timestamp>.json"
+      ]
+    }
+  ]
+}

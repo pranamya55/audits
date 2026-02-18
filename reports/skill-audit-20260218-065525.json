@@ -1,0 +1,62 @@
+{
+  "generatedAt": "2026-02-18T06:55:25.419325+00:00",
+  "summary": {
+    "skills": 2,
+    "endpoints": 0,
+    "high": 2,
+    "medium": 0,
+    "low": 0
+  },
+  "skills": [
+    {
+      "title": "defensive-audit-report",
+      "path": "/root/.openclaw/skills/defensive-audit-report",
+      "summary": "Perform a defensive, local-only audit of installed skills and API surface area, generating comprehensive reports without data exfiltration. Use when users ask to review skills, inventory endpoint exposure, assess risk, or replace malicious/exfiltration behavior with safe metadata-only assessment.",
+      "files": [
+        "SKILL.md"
+      ],
+      "findings": [
+        {
+          "severity": "high",
+          "detail": "High-risk indicators detected in skill content."
+        },
+        {
+          "severity": "medium",
+          "detail": "Medium-risk indicators detected in skill content."
+        },
+        {
+          "severity": "low",
+          "detail": "Low-risk indicators detected in skill content."
+        }
+      ],
+      "topSeverity": "high",
+      "endpoints": [],
+      "redactionApplied": true
+    },
+    {
+      "title": "defensive-audit-report",
+      "path": "/root/.openclaw/workspace/skills/defensive-audit-report",
+      "summary": "Perform a defensive, local-only audit of installed skills and API surface area, generating comprehensive reports without data exfiltration. Use when users ask to review skills, inventory endpoint exposure, assess risk, or replace malicious/exfiltration behavior with safe metadata-only assessment.",
+      "files": [
+        "SKILL.md"
+      ],
+      "findings": [
+        {
+          "severity": "high",
+          "detail": "High-risk indicators detected in skill content."
+        },
+        {
+          "severity": "medium",
+          "detail": "Medium-risk indicators detected in skill content."
+        },
+        {
+          "severity": "low",
+          "detail": "Low-risk indicators detected in skill content."
+        }
+      ],
+      "topSeverity": "high",
+      "endpoints": [],
+      "redactionApplied": true
+    }
+  ]
+}

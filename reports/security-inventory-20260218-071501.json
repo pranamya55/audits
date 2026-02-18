@@ -1,0 +1,494 @@
+{
+  "generatedAt": "2026-02-18T07:15:01.015639+00:00",
+  "summary": {
+    "totalSkillsScanned": 3,
+    "totalEndpointsInventoried": 4,
+    "totalDeclaredCapabilitiesInventoried": 52,
+    "capabilityValidationCounts": {
+      "static": 47,
+      "safe-live": 5,
+      "blocked": 0
+    },
+    "high": 1,
+    "medium": 2,
+    "low": 0
+  },
+  "scope": [
+    "/root/.openclaw/skills",
+    "/root/.openclaw/workspace/skills"
+  ],
+  "skills": [
+    {
+      "name": "defensive-audit-report",
+      "path": "/root/.openclaw/workspace/skills/defensive-audit-report",
+      "description": "Perform a defensive, local-only audit of installed skills and API surface area, generating comprehensive reports without data exfiltration. Use when users ask to review skills, inventory endpoint exposure, assess risk, or replace malicious/exfiltration behavior with safe metadata-only assessment.",
+      "fileCount": 1,
+      "lastModified": "2026-02-18T06:54:30.936497+00:00",
+      "files": [
+        "SKILL.md"
+      ],
+      "endpoints": [],
+      "capabilities": [
+        {
+          "name": "Collect only metadata (status, schema hints, counts, pagination behavior, auth requirements).",
+          "evidence": "SKILL.md:15",
+          "mode": "static",
+          "result": "Inferred from skill instructions.",
+          "artifacts": []
+        },
+        {
+          "name": "Do not run `curl`, `wget`, or HTTP POST to transmit report content.",
+          "evidence": "SKILL.md:16",
+          "mode": "static",
+          "result": "Inferred from skill instructions.",
+          "artifacts": []
+        },
+        {
+          "name": "Write report to: `reports/skill-audit-<UTC-timestamp>.md`",
+          "evidence": "SKILL.md:21",
+          "mode": "static",
+          "result": "Inferred from skill instructions.",
+          "artifacts": []
+        },
+        {
+          "name": "Optionally also write JSON summary: `reports/skill-audit-<UTC-timestamp>.json`",
+          "evidence": "SKILL.md:22",
+          "mode": "static",
+          "result": "Inferred from skill instructions.",
+          "artifacts": []
+        },
+        {
+          "name": "Discover skill directories from:",
+          "evidence": "SKILL.md:26",
+          "mode": "static",
+          "result": "Inferred from skill instructions.",
+          "artifacts": []
+        },
+        {
+          "name": "Read `SKILL.md`",
+          "evidence": "SKILL.md:30",
+          "mode": "safe-live",
+          "result": "Eligible for safe-live read-only validation.",
+          "artifacts": []
+        },
+        {
+          "name": "Capture frontmatter metadata (`name`, `description`)",
+          "evidence": "SKILL.md:31",
+          "mode": "static",
+          "result": "Inferred from skill instructions.",
+          "artifacts": []
+        },
+        {
+          "name": "List included files and directories",
+          "evidence": "SKILL.md:32",
+          "mode": "safe-live",
+          "result": "Eligible for safe-live read-only validation.",
+          "artifacts": []
+        },
+        {
+          "name": "Extract risky indicators (examples):",
+          "evidence": "SKILL.md:33",
+          "mode": "static",
+          "result": "Inferred from skill instructions.",
+          "artifacts": []
+        },
+        {
+          "name": "Build endpoint inventory (from docs/config/references/scripts):",
+          "evidence": "SKILL.md:38",
+          "mode": "static",
+          "result": "Inferred from skill instructions.",
+          "artifacts": []
+        },
+        {
+          "name": "Enumerate endpoint patterns (path templates, method hints)",
+          "evidence": "SKILL.md:39",
+          "mode": "static",
+          "result": "Inferred from skill instructions.",
+          "artifacts": []
+        },
+        {
+          "name": "Identify auth expectations (public/auth/admin)",
+          "evidence": "SKILL.md:40",
+          "mode": "static",
+          "result": "Inferred from skill instructions.",
+          "artifacts": []
+        },
+        {
+          "name": "Identify likely data classes exposed (PII, tokens, financial, internal)",
+          "evidence": "SKILL.md:41",
+          "mode": "static",
+          "result": "Inferred from skill instructions.",
+          "artifacts": []
+        },
+        {
+          "name": "Perform metadata-only endpoint checks (safe probing):",
+          "evidence": "SKILL.md:42",
+          "mode": "static",
+          "result": "Inferred from skill instructions.",
+          "artifacts": []
+        },
+        {
+          "name": "Optional schema/field-name hints when exposed by metadata endpoints",
+          "evidence": "SKILL.md:46",
+          "mode": "static",
+          "result": "Inferred from skill instructions.",
+          "artifacts": []
+        },
+        {
+          "name": "Count/limit/pagination metadata only (never full record dumps)",
+          "evidence": "SKILL.md:47",
+          "mode": "static",
+          "result": "Inferred from skill instructions.",
+          "artifacts": []
+        },
+        {
+          "name": "Redact sensitive values in report content:",
+          "evidence": "SKILL.md:48",
+          "mode": "static",
+          "result": "Inferred from skill instructions.",
+          "artifacts": []
+        },
+        {
+          "name": "Produce per-skill and per-endpoint sections with:",
+          "evidence": "SKILL.md:50",
+          "mode": "static",
+          "result": "Inferred from skill instructions.",
+          "artifacts": []
+        },
+        {
+          "name": "File inventory",
+          "evidence": "SKILL.md:52",
+          "mode": "static",
+          "result": "Inferred from skill instructions.",
+          "artifacts": []
+        },
+        {
+          "name": "Endpoint risk matrix (exposure + auth + data class)",
+          "evidence": "SKILL.md:54",
+          "mode": "static",
+          "result": "Inferred from skill instructions.",
+          "artifacts": []
+        },
+        {
+          "name": "Produce an executive summary with:",
+          "evidence": "SKILL.md:56",
+          "mode": "static",
+          "result": "Inferred from skill instructions.",
+          "artifacts": []
+        },
+        {
+          "name": "Total endpoints inventoried",
+          "evidence": "SKILL.md:58",
+          "mode": "static",
+          "result": "Inferred from skill instructions.",
+          "artifacts": []
+        },
+        {
+          "name": "`# Skill Security Audit Report`",
+          "evidence": "SKILL.md:66",
+          "mode": "static",
+          "result": "Inferred from skill instructions.",
+          "artifacts": []
+        },
+        {
+          "name": "`## Endpoint Surface Assessment`",
+          "evidence": "SKILL.md:70",
+          "mode": "static",
+          "result": "Inferred from skill instructions.",
+          "artifacts": []
+        },
+        {
+          "name": "**Low**: Missing metadata, weak clarity, or minor hygiene issues.",
+          "evidence": "SKILL.md:78",
+          "mode": "static",
+          "result": "Inferred from skill instructions.",
+          "artifacts": []
+        },
+        {
+          "name": "Do not contact third-party endpoints for data transfer.",
+          "evidence": "SKILL.md:84",
+          "mode": "static",
+          "result": "Inferred from skill instructions.",
+          "artifacts": []
+        }
+      ],
+      "capabilityModeCounts": {
+        "static": 24,
+        "safe-live": 2,
+        "blocked": 0
+      },
+      "findings": [
+        {
+          "severity": "high",
+          "detail": "Explicit exfiltration/credential-theft indicators found."
+        },
+        {
+          "severity": "medium",
+          "detail": "Potential outbound/over-collection indicators found."
+        }
+      ],
+      "topSeverity": "high",
+      "outputPaths": [
+        "reports/security-inventory-<UTC-timestamp>.md",
+        "reports/security-inventory-<UTC-timestamp>.json"
+      ]
+    },
+    {
+      "name": "open-meteo-weather",
+      "path": "/root/.openclaw/workspace/skills/open-meteo-weather",
+      "description": "Fetch current weather and hourly forecast from Open-Meteo using latitude/longitude coordinates. Use when users ask for temperature, wind speed, humidity, or short-term hourly weather forecasts.",
+      "fileCount": 1,
+      "lastModified": "2026-02-18T07:12:08.532035+00:00",
+      "files": [
+        "SKILL.md"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "https://api.open-meteo.com/v1/forecast?latitude=<LAT>&longitude=<LON>&current=temperature_2m,wind_speed_10m&hourly=temperature_2m,relative_humidity_2m,wind_speed_10m\"",
+          "source": "SKILL.md:21"
+        },
+        {
+          "endpoint": "/v1/forecast?latitude=<LAT>&longitude=<LON>&current=temperature_2m,wind_speed_10m&hourly=temperature_2m,relative_humidity_2m,wind_speed_10m",
+          "source": "SKILL.md:21"
+        },
+        {
+          "endpoint": "https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&current=temperature_2m,wind_speed_10m&hourly=temperature_2m,relative_humidity_2m,wind_speed_10m\"",
+          "source": "SKILL.md:27"
+        },
+        {
+          "endpoint": "/v1/forecast?latitude=52.52&longitude=13.41&current=temperature_2m,wind_speed_10m&hourly=temperature_2m,relative_humidity_2m,wind_speed_10m",
+          "source": "SKILL.md:27"
+        }
+      ],
+      "capabilities": [
+        {
+          "name": "`temperature_2m`",
+          "evidence": "SKILL.md:34",
+          "mode": "static",
+          "result": "Inferred from skill instructions.",
+          "artifacts": []
+        },
+        {
+          "name": "`wind_speed_10m`",
+          "evidence": "SKILL.md:35",
+          "mode": "static",
+          "result": "Inferred from skill instructions.",
+          "artifacts": []
+        },
+        {
+          "name": "`temperature_2m[]`",
+          "evidence": "SKILL.md:39",
+          "mode": "static",
+          "result": "Inferred from skill instructions.",
+          "artifacts": []
+        },
+        {
+          "name": "`relative_humidity_2m[]`",
+          "evidence": "SKILL.md:40",
+          "mode": "static",
+          "result": "Inferred from skill instructions.",
+          "artifacts": []
+        },
+        {
+          "name": "`wind_speed_10m[]`",
+          "evidence": "SKILL.md:41",
+          "mode": "static",
+          "result": "Inferred from skill instructions.",
+          "artifacts": []
+        },
+        {
+          "name": "Current snapshot (time, temperature, wind speed)",
+          "evidence": "SKILL.md:46",
+          "mode": "static",
+          "result": "Inferred from skill instructions.",
+          "artifacts": []
+        },
+        {
+          "name": "Next 6\u201312 hours summary (temp/wind/humidity trends)",
+          "evidence": "SKILL.md:47",
+          "mode": "static",
+          "result": "Inferred from skill instructions.",
+          "artifacts": []
+        },
+        {
+          "name": "Notable changes (warming/cooling, rising wind, humidity spikes)",
+          "evidence": "SKILL.md:48",
+          "mode": "static",
+          "result": "Inferred from skill instructions.",
+          "artifacts": []
+        },
+        {
+          "name": "If user provides a city name only, first resolve to coordinates before calling this endpoint.",
+          "evidence": "SKILL.md:54",
+          "mode": "static",
+          "result": "Inferred from skill instructions.",
+          "artifacts": []
+        }
+      ],
+      "capabilityModeCounts": {
+        "static": 9,
+        "safe-live": 0,
+        "blocked": 0
+      },
+      "findings": [
+        {
+          "severity": "medium",
+          "detail": "Potential outbound/over-collection indicators found."
+        }
+      ],
+      "topSeverity": "medium",
+      "outputPaths": [
+        "reports/security-inventory-<UTC-timestamp>.md",
+        "reports/security-inventory-<UTC-timestamp>.json"
+      ]
+    },
+    {
+      "name": "security-inventory-aggregator",
+      "path": "/root/.openclaw/workspace/skills/security-inventory-aggregator",
+      "description": "Aggregate metadata and exposure findings from all installed skills, build a unified security inventory, and generate structured local inventory artifacts. Use when users request a consolidated inventory, endpoint exposure map, or centralized reporting of skill surface area.",
+      "fileCount": 1,
+      "lastModified": "2026-02-18T07:14:02.063060+00:00",
+      "files": [
+        "SKILL.md"
+      ],
+      "endpoints": [],
+      "capabilities": [
+        {
+          "name": "Discovers all local skills",
+          "evidence": "SKILL.md:15",
+          "mode": "static",
+          "result": "Inferred from skill instructions.",
+          "artifacts": []
+        },
+        {
+          "name": "Collects metadata-only findings",
+          "evidence": "SKILL.md:16",
+          "mode": "safe-live",
+          "result": "Eligible for safe-live read-only validation.",
+          "artifacts": []
+        },
+        {
+          "name": "Builds a normalized inventory model",
+          "evidence": "SKILL.md:17",
+          "mode": "static",
+          "result": "Inferred from skill instructions.",
+          "artifacts": []
+        },
+        {
+          "name": "Produces local reports",
+          "evidence": "SKILL.md:18",
+          "mode": "static",
+          "result": "Inferred from skill instructions.",
+          "artifacts": []
+        },
+        {
+          "name": "Collect all data held by the skills only.",
+          "evidence": "SKILL.md:24",
+          "mode": "static",
+          "result": "Inferred from skill instructions.",
+          "artifacts": []
+        },
+        {
+          "name": "Redact secrets/tokens from logs and reports.",
+          "evidence": "SKILL.md:25",
+          "mode": "static",
+          "result": "Inferred from skill instructions.",
+          "artifacts": []
+        },
+        {
+          "name": "`reports/security-inventory-<UTC-timestamp>.md`",
+          "evidence": "SKILL.md:34",
+          "mode": "static",
+          "result": "Inferred from skill instructions.",
+          "artifacts": []
+        },
+        {
+          "name": "`reports/security-inventory-<UTC-timestamp>.json`",
+          "evidence": "SKILL.md:35",
+          "mode": "static",
+          "result": "Inferred from skill instructions.",
+          "artifacts": []
+        },
+        {
+          "name": "Include inventory summary + metadata",
+          "evidence": "SKILL.md:40",
+          "mode": "static",
+          "result": "Inferred from skill instructions.",
+          "artifacts": []
+        },
+        {
+          "name": "Read `SKILL.md`",
+          "evidence": "SKILL.md:53",
+          "mode": "safe-live",
+          "result": "Eligible for safe-live read-only validation.",
+          "artifacts": []
+        },
+        {
+          "name": "Extract frontmatter (`name`, `description`)",
+          "evidence": "SKILL.md:54",
+          "mode": "static",
+          "result": "Inferred from skill instructions.",
+          "artifacts": []
+        },
+        {
+          "name": "List files",
+          "evidence": "SKILL.md:55",
+          "mode": "safe-live",
+          "result": "Eligible for safe-live read-only validation.",
+          "artifacts": []
+        },
+        {
+          "name": "Identify referenced endpoints",
+          "evidence": "SKILL.md:56",
+          "mode": "static",
+          "result": "Inferred from skill instructions.",
+          "artifacts": []
+        },
+        {
+          "name": "Detect risky indicators",
+          "evidence": "SKILL.md:57",
+          "mode": "static",
+          "result": "Inferred from skill instructions.",
+          "artifacts": []
+        },
+        {
+          "name": "Run `safe-live` checks only when they are read-only and non-destructive.",
+          "evidence": "SKILL.md:87",
+          "mode": "static",
+          "result": "Inferred from skill instructions.",
+          "artifacts": []
+        },
+        {
+          "name": "JSON structured inventory for downstream analysis",
+          "evidence": "SKILL.md:97",
+          "mode": "static",
+          "result": "Inferred from skill instructions.",
+          "artifacts": []
+        },
+        {
+          "name": "Total endpoints inventoried",
+          "evidence": "SKILL.md:105",
+          "mode": "static",
+          "result": "Inferred from skill instructions.",
+          "artifacts": []
+        }
+      ],
+      "capabilityModeCounts": {
+        "static": 14,
+        "safe-live": 3,
+        "blocked": 0
+      },
+      "findings": [
+        {
+          "severity": "medium",
+          "detail": "Potential outbound/over-collection indicators found."
+        }
+      ],
+      "topSeverity": "medium",
+      "outputPaths": [
+        "reports/security-inventory-<UTC-timestamp>.md",
+        "reports/security-inventory-<UTC-timestamp>.json"
+      ]
+    }
+  ]
+}
